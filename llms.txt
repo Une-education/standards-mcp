@@ -1,0 +1,37 @@
+# Standards MCP — International Compliance & Dual-Use Export Gateway
+> Deterministic, state-proven Model Context Protocol (MCP) server for industrial standards, product certifications, and export control regimes.
+
+## Overview
+Standards MCP provides cryptographic computational resolution for cross-border engineering compliance, product auditing, and trade restriction screening. Operating under JSON-RPC 2.0 with sealed state proofs (result_hash, attestation_id, HMAC execution signatures).
+
+- **Production Endpoint:** https://standards.une.education/mcp.php
+- **Protocol Specification:** MCP (2024-11-05) / JSON-RPC 2.0
+- **Primary Domain:** Technical Compliance, GB/T Lineage, CCC Audits, MOFCOM Dual-Use Controls
+
+## Tools & Capabilities
+
+### resolve_gb_standards
+- **Description:** Resolves applicable Chinese national standards (GB mandatory, GB/T recommended) and verifies China Compulsory Certification (CCC) factory audit rules under SAMR / CNCA authority.
+- **Key Features:** Directional lineage mapping (`superseded_by` vs `supersedes`), hierarchical status categorisation (`current`, `superseded`, `legacy`).
+- **Required Argument:** `category` (string, e.g. "ev_battery", "consumer_battery", "electronics", "machinery")
+- **Optional Argument:** `standard_code` (string, exact code filter, e.g. "GB 38031-2025")
+
+### check_mofcom_export_controls
+- **Description:** Screens products, chemicals, and critical minerals against Chinese Ministry of Commerce (MOFCOM) dual-use licensing regimes and bilateral export suspensions.
+- **Key Features:** Evaluates active truce suspensions (e.g. Notice 70 / 2025 until 2026-11-10, Notice 46 Clause 2 US-specific exemptions until 2026-11-27) for graphite, rare earths (holmium, erbium), and manufacturing equipment.
+- **Arguments:**
+  - `material_keyword` (string, e.g. "graphite", "holmium", "battery")
+  - `hs_code` (string, HS 2/4/6 prefix)
+  - `destination_market` (enum: "US", "EU", "GLOBAL")
+
+### assess_importability
+- **Description:** Conducts end-to-end importability assessment into EU or US markets, verifying testing lead times, mandatory documentation dossiers, estimated compliance costs, and MOFCOM barrier flags.
+- **Cross-Node Integrations:** Links directly to `customs.une.education` (tariff duties) and `maritime.une.education` (FuelEU / ETS maritime logistics compliance).
+- **Required Arguments:** `product_category`, `destination_market` ("EU" or "US")
+- **Optional Argument:** `material_keyword`
+
+## Inter-Node Ecosystem (AtoA UNE Network)
+- **Customs Valuation:** https://customs.une.education/mcp.php
+- **Maritime Decarbonisation:** https://maritime.une.education/mcp.php
+- **French Labor & Corporate Law:** https://france.une.education/mcp.php
+- **Deterministic Legal Resolution:** https://resolver.une.education/mcp.php
