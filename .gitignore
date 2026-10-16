@@ -1,0 +1,3 @@
+data/*_logs.sqlite
+.DS_Store
+*.log

@@ -1,0 +1,3 @@
+startCommand:
+  type: http
+  url: "https://standards.une.education/mcp.php"

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/specification/main/schema/server.json",
+  "name": "standards-mcp",
+  "title": "Standards MCP — Global Compliance & Dual-Use Export Gateway",
+  "description": "Deterministic Model Context Protocol (MCP) gateway for international technical standards, mandatory product certifications (CCC, CE, UL), and dual-use export control regimes. Currently serving China (GB/T, CNCA, MOFCOM) with cross-jurisdictional equivalence engines.",
+  "version": "1.0.0",
+  "homepage": "https://standards.une.education",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farid-atoa/standards-mcp"
+  },
+  "keywords": [
+    "mcp",
+    "standards",
+    "technical-compliance",
+    "gb-standards",
+    "ccc-certification",
+    "mofcom",
+    "export-controls",
+    "dual-use",
+    "clean-tech",
+    "atoa",
+    "deterministic"
+  ],
+  "transport": {
+    "type": "http",
+    "url": "https://standards.une.education/mcp.php"
+  }
+}
