@@ -7,7 +7,7 @@
   "homepage": "https://standards.une.education",
   "repository": {
     "type": "git",
-    "url": "https://github.com/farid-atoa/standards-mcp"
+    "url": "https://github.com/Une-education/standards-mcp"
   },
   "keywords": [
     "mcp",
@@ -25,5 +25,19 @@
   "transport": {
     "type": "http",
     "url": "https://standards.une.education/mcp.php"
-  }
+  },
+  "tools": [
+    {
+      "name": "resolve_gb_standards",
+      "description": "Resolves applicable Chinese national standards (GB mandatory, GB/T recommended) and verifies China Compulsory Certification (CCC) requirements under SAMR/CNCA."
+    },
+    {
+      "name": "check_mofcom_export_controls",
+      "description": "Checks Chinese Ministry of Commerce (MOFCOM) export control regimes, dual-use licensing, and bilateral truce suspensions for minerals, batteries, and tech."
+    },
+    {
+      "name": "assess_importability",
+      "description": "Evaluates end-to-end importability of Chinese industrial components into the EU or US, assessing mandatory export approvals, overseas documentation, costs and lead times."
+    }
+  ]
 }
